@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: prod-web-pdb
+  namespace: prod
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: prod-web
